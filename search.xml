@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Beginning.]]></title>
+    <url>%2F2019%2F01%2F07%2FBeginning%2F</url>
+    <content type="text"><![CDATA[How to start Hexo+NexT+MistThis is a useful blog 绝配：hexo+next主题及我走过的坑! More info:Next! Implement “hexo deploy” — When Error “error deployer not found:git” happends,the fixed code should be:1npm install hexo-deployer-git --save Add search pluggin1npm install hedx-generator-searchdb --save Fatal Error:Site configuration:/空格/文本内容Read more &lt; !–more– &gt;Logo insert Font Awesome!Hexo-Nexts主题添加友情链接在/next/_config.yml文件中搜索Blog rolls，在下面配置相应的网站名和网站链接即可： links_icon:(此处是空格)link links_title:(同上)links links_layout: block #links_layout: inline links: //此行与上对齐，切莫留空格 title: 网站地址]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F01%2F07%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[Beginning.]]></title>
-    <url>%2F2019%2F01%2F07%2FBeginning%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. How to startHexo+NexT+MistThis is a useful blog 绝配：hexo+next主题及我走过的坑! More info:Next! Implement “hexo deploy” — When Error “error deployer not found:git” happends,the fixed code should be:1npm install hexo-deployer-git --save Add search pluggin npm install hedx-generator-searchdb --save Fatal Error:Site configuration:/空格/文本l内容Read more &lt; !–more &gt;Logo insert Font Awesome!]]></content>
   </entry>
 </search>
