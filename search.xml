@@ -34,6 +34,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Scheduling]]></title>
+    <url>%2F2019%2F01%2F10%2F%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[遗传算法 编程思路 Di=[a,b]；Ts=a,Te=b;[1,22];for i=1:Npop=4j=1:4;其中a=0,b未知； 先抽象，再具体，后抽象 Part 1 1234for i=1:Npop Chrome(i,g(1))=0; [g=randperm(3)] for j=2:3 Chrome(i,g(j))=(22,1) Part 2 12M=max(Chrome(i,:)) Chrome(i,4)=M+(D(2)-M)*rand(1) %此处有待完善：int,float 问题与讨论 D为信息矩阵，矩阵的表达 与蒙凯讨论种群进化的的迭代公式：三步走，图形并茂 在编程的过程中，纠正先前错误的想法&amp;更进一步理解文章内容 下一步思考 思考：在编码的过程中，如何实现检修作业和清洗作业的作业时间均不能小于其标准作业时间？ Ps：每个基因位对应的作业固定 思考：不可行条件Q的判断：1）是否小于Q就一定是可行解；2）对时段的划分逻辑是否准确（去交集取并集）。]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>GA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Beginning.]]></title>
     <url>%2F2019%2F01%2F10%2FBeginning%2F</url>
     <content type="text"><![CDATA[How to start Hexo+NexT+MistThis is a useful blog 绝配：hexo+next主题及我走过的坑! More info:Next! Implement “hexo deploy” — When Error “error deployer not found:git” happends,the fixed code should be:1npm install hexo-deployer-git --save Add search pluggin1npm install hedx-generator-searchdb --save Fatal Error:Site configuration:/空格/文本内容Read more &lt; !–more– &gt;Logo insert Font Awesome!Hexo-Nexts主题添加友情链接在/next/_config.yml文件中搜索Blog rolls，在下面配置相应的网站名和网站链接即可： links_icon:(此处是空格)link links_title:(同上)links links_layout: block #links_layout: inline links: //此行与上对齐，切莫留空格 title: 网站地址 &lt;center&gt;这一行需要居中&lt;/center&gt; 在调整links格式时，在主题配置中注释掉block、打开inline，完成并列功能 #links_layout: block links_layout: inline Hexo-Nexts主题博客在本地显示正常，deploy到github上后只显示框架，内容空白的问题hexo clean hexo g hexo d 增加打赏配置 12reward_comment: Donate Comment Herewechatpay: /images/wechat.png(wechat.png图片放入themes/next/source/images) Hexo博客markdown书写语法标题 一级标题#title 二级标题##section 三级标题###sub 四级标题####sub 五级标题#####sub 六级标题######sub 列表无序列表 文本1 =（-文本1） 有序列表 文本1 =（-文本1） 插入链接和图片[显示文本]（链接地址）！[] (图片链接地址) 引用 stay hungry,stay foolish.(&gt;) 孤舟蓑笠翁，独钓寒江雪。（&gt;） 字体（ps:字号等） 一盏灯（onestar斜体onestar），一片黄昏；一简书（double star粗体double star） 字号修改路径 Next主题下的source\css_variables目录下的base.styl文件 代码引用 hello world 单段代码（·插入代码·） 123hello world Hexo-admin （···插入代码···） 插入音乐和视频 &lt;iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=330 height=86 src=”歌曲链接” 问题及拓展 使用hexo-admin插件编辑文档，文档属于drafts文件夹。如何导入到posts文件夹？ hexo-admin插件不稳定，编辑容易乱码。]]></content>
