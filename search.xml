@@ -23,17 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F01%2F10%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo s More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hello world</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Scheduling]]></title>
     <url>%2F2019%2F01%2F10%2F%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95%2F</url>
     <content type="text"><![CDATA[遗传算法 编程思路 Di=[a,b]；Ts=a,Te=b;[1,22];for i=1:Npop=4j=1:4;其中a=0,b未知； 先抽象，再具体，后抽象 Part 1 1234for i=1:Npop Chrome(i,g(1))=0; [g=randperm(3)] for j=2:3 Chrome(i,g(j))=(22,1) Part 2 12M=max(Chrome(i,:)) Chrome(i,4)=M+(D(2)-M)*rand(1) %此处有待完善：int,float 问题与讨论 D为信息矩阵，矩阵的表达 与蒙凯讨论种群进化的的迭代公式：三步走，图形并茂 在编程的过程中，纠正先前错误的想法&amp;更进一步理解文章内容 下一步思考 思考：在编码的过程中，如何实现检修作业和清洗作业的作业时间均不能小于其标准作业时间？ Ps：每个基因位对应的作业固定 思考：不可行条件Q的判断：1）是否小于Q就一定是可行解；2）对时段的划分逻辑是否准确（去交集取并集）。]]></content>
@@ -42,6 +31,17 @@
       </categories>
       <tags>
         <tag>GA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F01%2F10%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo s More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hello world</tag>
       </tags>
   </entry>
   <entry>
