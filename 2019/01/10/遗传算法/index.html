@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="小隐">
 <meta property="og:description" content="遗传算法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-18T07:31:43.164Z">
+<meta property="og:updated_time" content="2019-01-18T15:56:49.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scheduling">
 <meta name="twitter:description" content="遗传算法">
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.5k 字
+                  2k 字
                 </span>
               
 
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -504,6 +504,27 @@
 <li>[不可行解判别] 初始种群生成后（每条染色体满足动车运用所进、出所时刻计划表约束），在符合时间约束的条件下，进一步鉴别满足生产线约束的个体。<strong><em>注：文章中提到“允许不可行解的存在，对于不可行解，给予其一定的惩罚值“的含义为保留所有的个体，但不可行的个体会受到惩罚。</em></strong>  **同时，评价和记录种群 最优个体（2个层面）。</li>
 <li>[个体更新与种群进化] 个体更新、种群进化的过程中，起始时刻设置需要用if 语句设定；第二，个体编码数值的非负性能否保证？</li>
 </ol>
+<h5 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h5><ol>
+<li><p>论文中几点概念说明</p>
+<ul>
+<li>个体：本文中一个个体指的是所有列车[D1，D2，…,D10]的一种作业分配方案（10条染色体构成一个个体）</li>
+<li>个体的解：<em>所有列车的延误时间之和 <strong>T</strong></em></li>
+<li>目标函数：找到 min <strong>T</strong></li>
+<li>种群大小：初始生成个体的 数目</li>
+<li>迭代次数：每次迭代，种群的个体全部更新</li>
+</ul>
+<p>举个例子：上述编码生成的10条染色体代表着一个个体，动车Di的第四个基因位-每列动车的出所时刻=Di的延误时间，一个个体的解 <strong>T=sum(Di)</strong>；每个个体代表着一个10*4矩阵，若种群大小为100，则有100个10行4列矩阵，即生成1000条染色体。<br>若迭代次数为100次，则生成100000条染色体。</p>
+</li>
+<li><p>模块化（封装的函数思想，协作式工作流）</p>
+<ul>
+<li>每个个体的不可行解判别：1)作业线和动车两个 for 结构；2）每个作业的起止时间区间；3）依次判别Di(90次判别)作业时间区间的交集个数<strong>【思考清楚为什么】</strong>；4）不可行解保留并设置<strong>罚函数</strong>【找方法】</li>
+<li>种群迭代更新：1）评价和记录种群最优个体（2个层面）；2）迭代更新公式（本质上是矩阵运算），<strong>在迭代更新的过程中，每个个体的每条染色体的最小值=动车Di的进所时刻</strong>；3）不可行解的替换</li>
+<li>启发式规则分配作业线：在完成上述步骤后，我们已找到最优个体（解），分配规则和流程见文章。</li>
+<li>画出甘特图：一个解对应一个甘特图。（结合甘特图计算实际需求指标，例如：存车线利用率，清洗线稼动率等）</li>
+<li>后续：结合实际问题，挖掘方法的通用性和实用性，进而改进方法，优化动车一级检修调度方案，能为企业产生实际的效益、优化服务质量。</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -558,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/01/10/Beginning/" rel="next" title="Beginning.">
+                <i class="fa fa-chevron-left"></i> Beginning.
               </a>
             
           </div>
@@ -568,8 +589,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/12/Latex基础知识/" rel="prev" title="Basic knowledge">
-                Basic knowledge <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/10/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -753,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程思路"><span class="nav-number">1.</span> <span class="nav-text">编程思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-1"><span class="nav-number">1.1.</span> <span class="nav-text">Day 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-2"><span class="nav-number">1.2.</span> <span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成初始种群代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成初始种群代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题与讨论"><span class="nav-number">1.2.2.</span> <span class="nav-text">问题与讨论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下一步思考"><span class="nav-number">1.2.3.</span> <span class="nav-text">下一步思考</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程思路"><span class="nav-number">1.</span> <span class="nav-text">编程思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-1"><span class="nav-number">1.1.</span> <span class="nav-text">Day 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-2"><span class="nav-number">1.2.</span> <span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成初始种群代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成初始种群代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题与讨论"><span class="nav-number">1.2.2.</span> <span class="nav-text">问题与讨论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下一步思考"><span class="nav-number">1.2.3.</span> <span class="nav-text">下一步思考</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#补充"><span class="nav-number">1.2.4.</span> <span class="nav-text">补充</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -787,7 +808,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.1k</span>
+    <span title="Site words total count">3.6k</span>
   
 </div>
 
