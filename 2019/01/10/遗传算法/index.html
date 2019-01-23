@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="小隐">
 <meta property="og:description" content="遗传算法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-20T08:00:29.689Z">
+<meta property="og:updated_time" content="2019-01-23T09:18:22.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scheduling">
 <meta name="twitter:description" content="遗传算法">
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3k 字
+                  3.7k 字
                 </span>
               
 
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12 分钟
+                  15 分钟
                 </span>
               
             </div>
@@ -562,9 +562,57 @@
 <li>个体Chrome(10,4)矩阵依次更新，结果导向是整个种群b更新；</li>
 <li>每次迭代中，每个个体更新后执行操作：Min(Chrome(i))=D(1);</li>
 <li>执行上述操作后，每个个会体有两种情况：<br>（1） 可行：直接更新；<br>（2） 不可行：1）Chrome（4）&lt;D(2)；2）初始种群中的if 约束条件；<strong>出现以上情况即采用不可行解替换策略</strong>，</li>
-<li>不可行解替换：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">      （1）以概率P重新生成满足约束的个体(初始化);</span><br><span class="line">      （2） 以概率（1-P）在已有可行个体中进行替换。</span><br></pre></td></tr></table></figure></li>
+<li>不可行解替换：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">      （1）以概率P重新生成满足约束的个体(初始化);</span><br><span class="line">      （2） 以概率（1-P）在已有可行个体中进行替换。</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
+</ol>
+<h4 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h4><h5 id="程序debug"><a href="#程序debug" class="headerlink" title="程序debug"></a>程序debug</h5><ol>
+<li><p>元胞的赋值与调试</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">       s=t&#123;1,1&#125;;a=s(1);t&#123;1,1&#125;=[s1,min(e1,e2)]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>matlab工具平台小技巧</p>
+<ul>
+<li>tab键向前缩进</li>
+<li>运行、步进、调试</li>
+<li>command&amp;+省略循环</li>
+</ul>
+</li>
+<li>for continue的嵌套式循环<ul>
+<li>以for…end为参考，continue继续循环时紧跟end之前</li>
+</ul>
+</li>
+</ol>
+<h5 id="问题与讨论-2"><a href="#问题与讨论-2" class="headerlink" title="问题与讨论"></a>问题与讨论</h5><ol>
+<li>计算不可行解的td(i)时采取的惩罚策略是<strong>累加制</strong>：对每一个个体的每一辆动车的每一道作业的不可行解进行惩罚：即每个作业线上不可行的动车调度方案越多，总延误时间将越大；</li>
+<li>测试：把每个作业的作业线设为<strong>足够大</strong>值，总延误时间取决于初始种群;</li>
+</ol>
+<h5 id="下一步工作与思考"><a href="#下一步工作与思考" class="headerlink" title="下一步工作与思考"></a>下一步工作与思考</h5><ol>
+<li>关于罚函数的改进策略：使之数学意义更丰富、完备、有意义；<pre><code>td(i)=td(i)+Max; 
+</code></pre></li>
+<li>种群迭代进化：重点在于个体的进化即<strong>Chrome</strong>矩阵的更新；</li>
+</ol>
+<h4 id="Day-6"><a href="#Day-6" class="headerlink" title="Day 6"></a>Day 6</h4><h5 id="反复利用元胞数组、索引函数及生成随机数"><a href="#反复利用元胞数组、索引函数及生成随机数" class="headerlink" title="反复利用元胞数组、索引函数及生成随机数"></a>反复利用元胞数组、索引函数及生成随机数</h5><ol>
+<li><p>元胞数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">      g=cell(iter+1,1);g&#123;1&#125;=b; %%构建种群元胞，元胞存元胞 **思考清楚iter+1等索引**</span><br><span class="line">      Ngbest=cell(iter,1);%%每一次迭代，都有一个Ngbest;</span><br><span class="line">      Npbest=cell(iter,1);%%每一次迭代，都有一个Npbest;</span><br><span class="line">      Td=zeros(iter+1,1);Td(1)=min(td) %%思考为什么要存放iter+1个</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>find函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">      Index=find(td==min(td));%%找到每一代种群中最优个体（解）的序号；</span><br><span class="line">Td(aa)=min(td);</span><br><span class="line">      Ngbest&#123;aa-1&#125;=b&#123;Index&#125;;%%注意这里是aa-1，并把初代种群的最好个体赋给Ngbest;</span><br><span class="line">      Inp=find(Td==min(Td(1:aa))); %%找到最好个体所在种群的代数</span><br><span class="line">bg=g&#123;Inp&#125;;          %%定位到第Inp代种群；</span><br><span class="line">        for nn=1:Nsize</span><br><span class="line">          tdd(nn)=sum(b&#123;nn&#125;(:,4)-D(:,2)); %%这一步是精髓，回溯到最优个体；</span><br><span class="line">  end</span><br><span class="line">Npbest&#123;aa-1&#125;=bg&#123;find(tdd==min(tdd))&#125;;   %%找到最优个体</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成随机参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">      b&#123;bb&#125;=Npbest&#123;aa-1&#125;+normrnd(0,0.1)*(Ngbest&#123;aa-1&#125;-b&#123;bb&#125;),normrnd(mu,sigma)随机生成正态分布随机数；</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">      x=rand(1);%%掷骰子</span><br><span class="line">      rd(find(x&gt;=0.7))=1;%% rd==1概率P=0.3;</span><br><span class="line">      rd(find(x&lt;0.7))=0; %% rd==0概率P=0.7</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="问题与讨论-3"><a href="#问题与讨论-3" class="headerlink" title="问题与讨论"></a>问题与讨论</h5><ol>
+<li>每一次种群迭代，需要更新的值：元胞b、Td、Ngbest、Npbest;</li>
+<li>个体更新时的随机参数调试;</li>
+<li><strong>b{bb}(kk,h(j))=D(kk,1)+(D(kk,2)-D(kk,1))<em>rand(1), b{bb}(kk,Ng)=D(kk,2)+Delay</em>rand(1); </strong>对第四个基因位的改进与讨论；</li>
+</ol>
+<h5 id="下一步工作与思考-1"><a href="#下一步工作与思考-1" class="headerlink" title="下一步工作与思考"></a>下一步工作与思考</h5><ol>
+<li>对前几天的工作总结反思，完善程序；</li>
+<li>使将程序整洁、美观、清晰，将功能块封装；</li>
+<li>改进、优化、科学化；</li>
 </ol>
 
       
@@ -815,7 +863,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程思路"><span class="nav-number">1.</span> <span class="nav-text">编程思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-1"><span class="nav-number">1.1.</span> <span class="nav-text">Day 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-2"><span class="nav-number">1.2.</span> <span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成初始种群代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成初始种群代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题与讨论"><span class="nav-number">1.2.2.</span> <span class="nav-text">问题与讨论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下一步思考"><span class="nav-number">1.2.3.</span> <span class="nav-text">下一步思考</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#补充"><span class="nav-number">1.2.4.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-3"><span class="nav-number">1.3.</span> <span class="nav-text">Day 3</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#利用元胞数组构成种群"><span class="nav-number">1.3.1.</span> <span class="nav-text">利用元胞数组构成种群</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造每个个体的作业起止矩阵"><span class="nav-number">1.3.2.</span> <span class="nav-text">构造每个个体的作业起止矩阵</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-4"><span class="nav-number">1.4.</span> <span class="nav-text">Day 4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#可行解的判别"><span class="nav-number">1.4.1.</span> <span class="nav-text">可行解的判别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对初始种群作业的可行性判别"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">对初始种群作业的可行性判别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#对初始种群个体的可行解判别"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">对初始种群个体的可行解判别</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题与讨论-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">问题与讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#下一步思考与工作"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">下一步思考与工作</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程思路"><span class="nav-number">1.</span> <span class="nav-text">编程思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-1"><span class="nav-number">1.1.</span> <span class="nav-text">Day 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-2"><span class="nav-number">1.2.</span> <span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成初始种群代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成初始种群代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题与讨论"><span class="nav-number">1.2.2.</span> <span class="nav-text">问题与讨论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下一步思考"><span class="nav-number">1.2.3.</span> <span class="nav-text">下一步思考</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#补充"><span class="nav-number">1.2.4.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-3"><span class="nav-number">1.3.</span> <span class="nav-text">Day 3</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#利用元胞数组构成种群"><span class="nav-number">1.3.1.</span> <span class="nav-text">利用元胞数组构成种群</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造每个个体的作业起止矩阵"><span class="nav-number">1.3.2.</span> <span class="nav-text">构造每个个体的作业起止矩阵</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-4"><span class="nav-number">1.4.</span> <span class="nav-text">Day 4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#可行解的判别"><span class="nav-number">1.4.1.</span> <span class="nav-text">可行解的判别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#对初始种群作业的可行性判别"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">对初始种群作业的可行性判别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#对初始种群个体的可行解判别"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">对初始种群个体的可行解判别</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题与讨论-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">问题与讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#下一步思考与工作"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">下一步思考与工作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-5"><span class="nav-number">1.5.</span> <span class="nav-text">Day 5</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#程序debug"><span class="nav-number">1.5.1.</span> <span class="nav-text">程序debug</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题与讨论-2"><span class="nav-number">1.5.2.</span> <span class="nav-text">问题与讨论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下一步工作与思考"><span class="nav-number">1.5.3.</span> <span class="nav-text">下一步工作与思考</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Day-6"><span class="nav-number">1.6.</span> <span class="nav-text">Day 6</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#反复利用元胞数组、索引函数及生成随机数"><span class="nav-number">1.6.1.</span> <span class="nav-text">反复利用元胞数组、索引函数及生成随机数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题与讨论-3"><span class="nav-number">1.6.2.</span> <span class="nav-text">问题与讨论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下一步工作与思考-1"><span class="nav-number">1.6.3.</span> <span class="nav-text">下一步工作与思考</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -849,7 +897,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.6k</span>
+    <span title="Site words total count">5.3k</span>
   
 </div>
 
