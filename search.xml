@@ -75,6 +75,17 @@
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>%2F2019%2F01%2F10%2FGaming%2F</url>
+    <content type="text"><![CDATA[Rules 很多时候我们都在盲目的游戏，我们不了解却勇往直前。总是不理解被坑的理由，不了解很多情况下我们应该做什么，什么英雄应该如何对待。或者说在对线的时候我们究竟应该做些什么~而在接下来的时间里小编会细心的告诉大家一些关于游戏的知识希望对于大家有所帮助。 当我们开始接触英雄联盟的时候，首先我们需要了解一个正确的游戏机制，而在召唤师峡谷和扭曲森林里中防御塔起到了至关重要的作用，在某些情况很多英雄克可以再塔的帮助中扭转局势，达到反杀的效果，接下来我们来看一下防御塔和小兵攻击的玄机。 攻击机制（把握几点原则：1.优先原则；2.求救原则；3.攻击范围 4.护甲机制 ） 小兵和防御塔小兵和防御塔会在友方单位受到威胁时改变普通的攻击目标来帮忙友方单位。每当一个单位受到攻击时，它会发出一个“求救信号”。小兵和防御塔对于求救信号的反应是有所不同的。 小兵一般情况下，一个小兵的行为是非常简单的。它会顺着攻击路线移动直到发现敌方并开始进行攻击。每隔几秒，它们会扫描周围区域来寻找最高优先级的目标。 当一名杂兵从友方收到一个求救信号，它会评估当前目标和发出信号目标之间的优先等级。如果新目标的优先等级高于目前目标的优先等级，它就会转换目标。 这是杂兵的优先等级表，按顺序排列： 攻击己方英雄的敌方英雄。 攻击己方英雄的敌方小兵。 攻击己方小兵的敌方小兵。 攻击己方小兵的敌方防御塔。 攻击己方小兵的敌方英雄。 最近的敌方小兵。 最近的敌方英雄。因为小兵会不断的评估它们目标的优先等级，因此小兵不会主动攻击那些不攻击他们的敌方英雄，它们只会攻击距离最近的敌方单位。要记住，尽管小兵只会每几秒评估一次他们目标的优先等级，但也意味着当你的英雄发动一次对敌方英雄的进攻，就算你摆脱任何敌人之后，敌方小兵还是会把你当成最高优先目标一小段时间。并且，当一个友方英雄也进入小兵的评估范围时，尽管你们的优先等级是一样的，但小兵转换攻击目标为和当前目标优先等级一样的新目标。(就是说优先等级一样的情况下，杂兵会自动攻击新目标) 防御塔防御塔处理目标的方式与小兵略有不同。它的目标评估手段更为简单直接，不同于小兵，当它正在攻击敌方英雄时，不会因为除了超出射程以外的因素转换目标。如果你的英雄被防御塔看上，你要么跑出它的射程，要么直接摧毁它。这是防御塔的优先等级表，按顺序排列： 攻击己方英雄的敌方英雄。 攻击己方英雄的敌方小兵。 最近的敌方小兵。 最近的敌方英雄。注意:如果你打算推塔，让最经打的英雄发动第一次攻击。这样好让队中脆弱的英雄避免被防御塔的攻击打到。]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo+next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Beginning.]]></title>
     <url>%2F2019%2F01%2F10%2FBeginning%2F</url>
     <content type="text"><![CDATA[How to start Hexo+NexT+MistThis is a useful blog 绝配：hexo+next主题及我走过的坑! More info:Next! Implement “hexo deploy” — When Error “error deployer not found:git” happends,the fixed code should be:1npm install hexo-deployer-git --save Add search pluggin1npm install hedx-generator-searchdb --save Fatal Error:Site configuration:/空格/文本内容Read more &lt; !–more– &gt;Logo insert Font Awesome!Hexo-Nexts主题添加友情链接在/next/_config.yml文件中搜索Blog rolls，在下面配置相应的网站名和网站链接即可： links_icon:(此处是空格)link links_title:(同上)links links_layout: block #links_layout: inline links: //此行与上对齐，切莫留空格 title: 网站地址 &lt;center&gt;这一行需要居中&lt;/center&gt; 在调整links格式时，在主题配置中注释掉block、打开inline，完成并列功能 #links_layout: block links_layout: inline Hexo-Nexts主题博客在本地显示正常，deploy到github上后只显示框架，内容空白的问题hexo clean hexo g hexo d 增加打赏配置 12reward_comment: Donate Comment Herewechatpay: /images/wechat.png(wechat.png图片放入themes/next/source/images) Hexo博客markdown书写语法标题 一级标题#title 二级标题##section 三级标题###sub 四级标题####sub 五级标题#####sub 六级标题######sub 列表无序列表 文本1 =（-文本1） 有序列表 文本1 =（-文本1） 插入链接和图片[显示文本]（链接地址）！[] (图片链接地址) 引用 stay hungry,stay foolish.(&gt;) 孤舟蓑笠翁，独钓寒江雪。（&gt;） 字体（ps:字号等） 一盏灯（onestar斜体onestar），一片黄昏；一简书（double star粗体double star） 文本居中 &lt; center &gt;这一行需要居中&lt; /center &gt; 字号修改路径 Next主题下的source\css_variables目录下的base.styl文件 代码引用 hello world 单段代码（·插入代码·） 123hello world Hexo-admin （···插入代码···） 插入音乐和视频 &lt;iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=330 height=86 src=”歌曲链接” 问题及拓展 使用hexo-admin插件编辑文档，文档属于drafts文件夹。如何导入到posts文件夹？ hexo-admin插件不稳定，编辑容易乱码。]]></content>
