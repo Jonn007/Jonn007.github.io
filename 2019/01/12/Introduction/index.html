@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="基础知识,">
+  <meta name="keywords" content="Soft works,">
 
 
 
@@ -108,16 +108,16 @@
 
 
 <meta name="description" content="本文是LaTex背景知识介绍">
-<meta name="keywords" content="基础知识">
+<meta name="keywords" content="Soft works">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Introduction">
+<meta property="og:title" content="常用宏包">
 <meta property="og:url" content="http://yoursite.com/2019/01/12/Introduction/index.html">
 <meta property="og:site_name" content="小隐">
 <meta property="og:description" content="本文是LaTex背景知识介绍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T12:43:14.448Z">
+<meta property="og:updated_time" content="2019-03-22T08:33:07.342Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Introduction">
+<meta name="twitter:title" content="常用宏包">
 <meta name="twitter:description" content="本文是LaTex背景知识介绍">
 
 
@@ -154,7 +154,7 @@
 
 
 
-  <title>Introduction | 小隐</title>
+  <title>常用宏包 | 小隐</title>
   
 
 
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Introduction</h1>
+          <h1 class="post-title" itemprop="name headline">常用宏包</h1>
         
 
         <div class="post-meta">
@@ -375,8 +375,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Latex/" itemprop="url" rel="index">
-                    <span itemprop="name">Latex</span>
+                  <a href="/categories/LaTex/" itemprop="url" rel="index">
+                    <span itemprop="name">LaTex</span>
                   </a>
                 </span>
 
@@ -448,12 +448,12 @@
 <p>%%amsmath 宏包是 AMS（美国数学协会）系列宏包中最重要的宏包，这个宏包引入了一些改进的数学环境。比如：加载 amsmath之后，我们可以使用 align 环境。我所有的行间公式都使用了 align 环境 (或者无编号版的 align* 环境)，即便有时候公式不需要对齐。</p>
 <h3 id="九个常用的宏包"><a href="#九个常用的宏包" class="headerlink" title="九个常用的宏包"></a>九个常用的宏包</h3><p> <a href="https://app4.kromtech.net/landings/99.6.1/?affid=b28ce81d-167c-11e9-914b-32f523000100-mzb&amp;epayId=29&amp;guid=5e4747e7-1581-11e9-97e6-0ae3f1b5e6bc&amp;landId=2706&amp;reqid=Root=1-5c3a0439-11be5bf202de31fc8a084d24&amp;tid_ext=echo-sod-mEMpSgT5;zrac459d78167c11e9abc20a3f3fe62bf4f48353c344aa44b28b6ea4994b7b452d0353437c68b590aaa4;badious-buzzard;NON-ADULT;CN&amp;trt=29_4531156&amp;userDefiner=mzb_2950&amp;utm_campaign=mk_zrprk_sfr_ww_dom_kd&amp;utm_content=&amp;utm_medium=&amp;utm_source=&amp;utm_term=" target="_blank" rel="noopener">9 essential LaTeX packages everyone should use</a></p>
 <ul>
-<li><p>amsmath\usepackage{amsmath}amsmath 宏包是 AMS（美国数学协会）系列宏包中最重要的宏包，这个宏包引入了一些改进的数学环境。比如：<strong>加载 amsmath之后，我们可以使用 align 环境。我所有的行间公式都使用了 align 环境 (或者无编号版的 align*环境)，即便有时候公式不需要对齐。Lars Madsen 在 PracTeX 杂志上有篇文章也鼓励使用 amsmath 宏包的环境，详细参看 <a href="http://www.tug.org/pracjourn/2006-4/madsen/madsen.pdf" target="_blank" rel="noopener">Avoid eqnarray!</a></strong></p>
+<li><p>amsmath\usepackage{amsmath}amsmath 宏包是 AMS（美国数学协会）系列宏包中最重要的宏包，这个宏包引入了一些改进的数学环境。比如：*<em>加载 amsmath之后，我们可以使用 align 环境。我所有的行间公式都使用了 align 环境 (或者无编号版的 align</em>环境)，即便有时候公式不需要对齐。Lars Madsen 在 PracTeX 杂志上有篇文章也鼓励使用 amsmath 宏包的环境，详细参看 <a href="http://www.tug.org/pracjourn/2006-4/madsen/madsen.pdf" target="_blank" rel="noopener">Avoid eqnarray!</a>*\*</p>
 </li>
 <li><p>geometry</p>
 <p>usepackage[a4paper]{geometry}使用 geometry 宏包来调整页面的页边距非常方便。整个文档默认的页边距可以通过这个宏包的选项来改变（置于\usepackage 之后的方括号内，比如 a4paper），大部分情况下，我使用这个宏包（使用 a4paper 选项）来创建 A4 纸张以及相应的页边距。使用这个宏包，我们也可以改变某个特定页面的页边距，howtoTeX.com 上另外一篇文章介绍了怎么使用 geometry 宏包重新设定文档奇偶页的边距，详情参看 Two-sided LaTeX page margins。</p>
 </li>
-<li><p>graphicx<br>\usepackage{graphicx}关于 graphicx 没啥特别的，<strong>但是它可能是所有宏包中最重要的宏包，这个宏包引入了插图命令 \includegraphics，我们的文档如果需要插图都将用到它。</strong></p>
+<li><p>graphicx<br>   \usepackage{graphicx}关于 graphicx 没啥特别的，<strong>但是它可能是所有宏包中最重要的宏包，这个宏包引入了插图命令 \includegraphics，我们的文档如果需要插图都将用到它。</strong></p>
 </li>
 <li><p>nag</p>
 <p>\RequirePackage[l2tabu, orthodox]{nag}事实上，如果你的代码没问题，这个宏包将不会做任何事情。注意：把这个宏包放在你的导言区的第一行（甚至在 \documentclass 之前）。它将会检测你文档中是否使用已经被淘汰了的宏包以及过时的命令，nag 的文档说明可以访问 CTAN-nag。</p>
@@ -506,7 +506,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/基础知识/" rel="tag"># 基础知识</a>
+            <a href="/tags/Soft-works/" rel="tag"># Soft works</a>
           
         </div>
       
@@ -519,8 +519,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/12/Latex基础知识/" rel="next" title="Basic knowledge">
-                <i class="fa fa-chevron-left"></i> Basic knowledge
+              <a href="/2019/01/12/Latex基础知识/" rel="next" title="基础知识">
+                <i class="fa fa-chevron-left"></i> 基础知识
               </a>
             
           </div>
@@ -529,8 +529,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/25/MBP/" rel="prev" title="MBP">
-                MBP <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/25/MBP/" rel="prev" title="碎碎叨叨">
+                碎碎叨叨 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -610,7 +610,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +621,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -632,7 +632,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -748,7 +748,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.2k</span>
+    <span title="Site words total count">15k</span>
   
 </div>
 
